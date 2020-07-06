@@ -1,0 +1,14 @@
+.screen{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    border: .5px solid #000;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.heading{
+    font-size: 50px;
+
+}
