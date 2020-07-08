@@ -32,7 +32,7 @@ function LandingPage(props) {
         <div className="text">
             Hello, I'm <span className="highlight">Luke Daniels</span>.
             <br/>
-            I'm a full-stack developer.
+            I'm a full-stack developer living in Australia.
           </div>
           <div className="button" onClick={()=>document.getElementById('about').scrollIntoView({ behavior: "smooth" })}>
             View my work <i id="arrow" className="fas fa-chevron-right"></i>

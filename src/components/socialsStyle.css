@@ -1,0 +1,16 @@
+.socials{
+    padding: 30px;
+    background: #1b242f;
+    color: #d3d3d3;
+    font-size: xxx-large;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+
+}
+.socials >*{
+    margin-left: 30px;
+    margin-right: 30px;
+    cursor: pointer;
+}

@@ -16,6 +16,8 @@ function Nav(props) {
       let aboutBounds = document.getElementById("about").getBoundingClientRect();
       document.getElementById("navigation").className =
         aboutBounds.top <= 0 ? "fixed" : "";
+        document.querySelector("body").className =
+        aboutBounds.top <= 0 ? "padding" : "";
     }
   };
 

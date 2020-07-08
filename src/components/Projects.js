@@ -8,10 +8,11 @@ import AlgoView from "../assets/algoview3.png";
 import Fsi from "../assets/fsi.png";
 import Covid from "../assets/covid.png";
 import Ifuture from "../assets/ifuture.png";
+import { useInView } from "react-intersection-observer";
 
 const Project = (props) => {
   return (
-    <div className="project">
+    <div className={props.zoomIn ? "project zoomIn" : "project"}>
       <img src={props.img} className="projectImg" />
       <div className="projectText">
         <p className="projectHeading">{props.heading}</p>
@@ -24,11 +25,29 @@ const Project = (props) => {
 };
 
 function Projects(props) {
+
+    const [ref, inView, entry] = useInView({
+      /* Optional options */
+      threshold: 0.15,
+    });
+
+    const[zoom, setZoom] = React.useState(false);
+  
+    React.useEffect(() => {
+      if (inView) {
+        document.getElementById("projectHeading").className += " slide";
+        document.getElementById("projectUnderline").className += " slide";
+        setZoom(true)
+
+      }
+    });
   return (
-    <div id="projects" className="screen" ref={props.inView}>
-      <p className="heading">Projects</p>
+    <div id="projects" className="screen" ref={props.inView} ref={ref}>
+      <p id="projectHeading" className="heading">Projects</p>
+      <div id="projectUnderline" className="underLine"></div>
       <div className="projectsContainer">
         <Project
+        zoomIn={zoom}
           img={AbcTutors}
           parts={
             <ul>
@@ -52,6 +71,7 @@ function Projects(props) {
           tech={"React Native / MySQL / PHP"}
         />
         <Project
+         zoomIn={zoom}
           img={Maps}
           text={
             <div>
@@ -73,6 +93,7 @@ function Projects(props) {
           tech={"VanillaJS / MySQL / PHP / Mapbox / Googles elevation API"}
         />
         <Project
+         zoomIn={zoom}
           img={Waiver}
           text={
             <div>
@@ -89,6 +110,7 @@ function Projects(props) {
           tech={"VanillaJS / MySQL / PHP / Rezdy"}
         />
         <Project
+         zoomIn={zoom}
           img={AlgoView}
           text={
             <div>
@@ -104,6 +126,7 @@ function Projects(props) {
         />
 
         <Project
+         zoomIn={zoom}
           img={Fsi}
           text={
             <div>
@@ -120,6 +143,7 @@ function Projects(props) {
         />
 
         <Project
+         zoomIn={zoom}
           img={Ifuture}
           text={
             <div>
@@ -140,6 +164,7 @@ function Projects(props) {
         />
 
         <Project
+         zoomIn={zoom}
           img={Covid}
           text={
             <div>

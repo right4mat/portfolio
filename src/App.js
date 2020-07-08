@@ -6,6 +6,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Nav from './components/Nav';
+import Socials from './components/Socials';
 import { useInView } from 'react-intersection-observer';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <About inView={refAbout}/>      
       <Projects inView={refProjects}/>
       <Contact inView={refContact}/>
+      <Socials/>
       
     </div>
   );

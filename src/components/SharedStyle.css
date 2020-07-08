@@ -10,5 +10,22 @@
 
 .heading{
     font-size: 50px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    transition: 1s;
+    transform: translateX(-1000%);
 
+}
+
+.underLine{
+    border-bottom: 3px solid #d3d3d3;
+    width: 20%;
+    margin-bottom: 30px;
+    transition: 1s;
+    transform: translateX(1000%);
+}
+
+.slide{
+    
+    transform: translateX(0) !important;
 }
