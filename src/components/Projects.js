@@ -16,7 +16,8 @@ const Project = (props) => {
       <div className="projectText">
         <p className="projectHeading">{props.heading}</p>
         <div>{props.text}</div>
-        <div>{props.tech}</div>
+        <div>{props.parts}</div>
+        <div className="stack">{props.tech}</div>
       </div>
     </div>
   );
@@ -29,20 +30,22 @@ function Projects(props) {
       <div className="projectsContainer">
         <Project
           img={AbcTutors}
+          parts={
+            <ul>
+              <li>
+                Find tutors locally based on distance, or remote from all over Australia!
+              </li>
+              <li>Add your card details and begin booking tutors!</li>
+              <li>Save tutors to your favorites!</li>
+              <li>Filter tutors by experince and subject!</li>
+              <li>IOS and Android</li>
+            </ul>
+          }
           text={
             <div>
-              Progressive web app waiver system built for Blue Mountains
-              Adventure Company
-              <br></br>interesting parts:<br></br>
-              <ul>
-                <li>Easy to install on in house ipads to use in the field</li>
-                <li>Easy to prefill at home through the browser</li>
-                <li>Updates rezdy bookings once filled</li>
-                <li>
-                  Can be intergrated with any booking system with that has api
-                  access
-                </li>
-              </ul>
+              Cross platform IOS and Android app developed for ABC Nanny
+              Services as a fail safe for the company to transition out of
+              childcare and into tutoring due to Covid 19.
             </div>
           }
           heading={"ABC Nanny Services (Tutoring)"}
@@ -53,22 +56,21 @@ function Projects(props) {
           text={
             <div>
               Map editor built for one of Australia's largest travel companies.
-              <br></br>interesting parts:<br></br>
               <ul>
                 <li>
                   Live maps for websites use custom tile server to drive down
-                  cost
+                  cost!
                 </li>
-                <li>Automatic path creation for cycle, driving and walking</li>
-                <li>Elevation profile creation</li>
-                <li>Day by day maps / elevations</li>
-                <li>importing map features from other maps</li>
-                <li>upload GPX files </li>
+                <li>Automatic path creation for cycle, driving and walking!</li>
+                <li>Elevation profile creation!</li>
+                <li>Day by day maps / elevations!</li>
+                <li>importing map features from other maps!</li>
+                <li>upload your own GPX files! </li>
               </ul>
             </div>
           }
           heading={"World Expeditions Travel Group Map Editor"}
-          tech={"VanillaJS / MySQL / PHP"}
+          tech={"VanillaJS / MySQL / PHP / Mapbox / Googles elevation API"}
         />
         <Project
           img={Waiver}
@@ -76,72 +78,52 @@ function Projects(props) {
             <div>
               Progressive web app waiver system built for Blue Mountains
               Adventure Company
-              <br></br>interesting parts:<br></br>
               <ul>
-                <li>Easy to install on in house ipads to use in the field</li>
-                <li>Easy to prefill at home through the browser</li>
-                <li>Updates rezdy bookings once filled</li>
-                <li>
-                  Can be intergrated with any booking system with that has api
-                  access
-                </li>
+                <li>Easy to install on ipads to use in the field!</li>
+                <li>Easy to prefill at home through the browser!</li>
+                <li>Dedicated back end, with the option of updating rezdy bookings directly through the API</li>
               </ul>
             </div>
           }
           heading={"BMAC Waivers"}
-          tech={"VanillaJS / MySQL / PHP"}
+          tech={"VanillaJS / MySQL / PHP / Rezdy"}
         />
         <Project
           img={AlgoView}
           text={
             <div>
-              Progressive web app waiver system built for Blue Mountains
-              Adventure Company
-              <br></br>interesting parts:<br></br>
+              Person project to consolidate my knowledge of data structures and algorithims
               <ul>
-                <li>Easy to install on in house ipads to use in the field</li>
-                <li>Easy to prefill at home through the browser</li>
-                <li>Updates rezdy bookings once filled</li>
-                <li>
-                  Can be intergrated with any booking system with that has api
-                  access
-                </li>
+                <li>An array of sorting algorithims! (Pun intended)</li>
+                <li>Has pathing finding algorithims too!</li>
               </ul>
             </div>
           }
-          heading={"BMAC Waivers"}
-          tech={"VanillaJS / MySQL / PHP"}
+          heading={"Algo View"}
+          tech={"ReactJS"}
         />
 
         <Project
           img={Fsi}
           text={
             <div>
-              Progressive web app waiver system built for Blue Mountains
-              Adventure Company
-              <br></br>interesting parts:<br></br>
+              Portal created for the <a href="https://fireandsafety.com.au/">FSI</a>. A place where FSI can share documents and news with distributors.
               <ul>
-                <li>Easy to install on in house ipads to use in the field</li>
-                <li>Easy to prefill at home through the browser</li>
-                <li>Updates rezdy bookings once filled</li>
-                <li>
-                  Can be intergrated with any booking system with that has api
-                  access
-                </li>
+                <li>Upload and delete documents as admin!</li>
+                <li>Update home page as admin!</li>
+                <li>Signup with email address!</li>
               </ul>
             </div>
           }
-          heading={"BMAC Waivers"}
-          tech={"VanillaJS / MySQL / PHP"}
+          heading={"FSI Portal"}
+          tech={"ReactJS / MySQL / PHP"}
         />
 
         <Project
           img={Ifuture}
           text={
             <div>
-              Progressive web app waiver system built for Blue Mountains
-              Adventure Company
-              <br></br>interesting parts:<br></br>
+              Progressive web app for writing letters to your future self
               <ul>
                 <li>Easy to install on in house ipads to use in the field</li>
                 <li>Easy to prefill at home through the browser</li>
@@ -153,8 +135,8 @@ function Projects(props) {
               </ul>
             </div>
           }
-          heading={"BMAC Waivers"}
-          tech={"VanillaJS / MySQL / PHP"}
+          heading={"Ifuture"}
+          tech={"ReactJS / MySQL / PHP"}
         />
 
         <Project
