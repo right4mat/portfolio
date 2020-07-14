@@ -29,3 +29,9 @@
     
     transform: translateX(0) !important;
 }
+
+.active {
+    
+    color: #e32d1b;
+
+}

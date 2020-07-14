@@ -25,14 +25,14 @@
     align-items: center;
     flex-direction: row;
     color: white;
+    transition: all .5s;
   }
 
   .navOptions div{
       cursor: pointer;
   }
 
-.active {
-    transition: all .5s;
+  .navOptions div:hover{
     color: #e32d1b;
+  }
 
-}

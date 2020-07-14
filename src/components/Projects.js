@@ -8,6 +8,7 @@ import AlgoView from "../assets/algoview3.png";
 import Fsi from "../assets/fsi.png";
 import Covid from "../assets/covid.png";
 import Ifuture from "../assets/ifuture.png";
+import Reports from "../assets/REPORTS.png";
 import { useInView } from "react-intersection-observer";
 
 const Project = (props) => {
@@ -25,38 +26,45 @@ const Project = (props) => {
 };
 
 function Projects(props) {
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0.15,
+  });
 
-    const [ref, inView, entry] = useInView({
-      /* Optional options */
-      threshold: 0.15,
-    });
+  const [zoom, setZoom] = React.useState(false);
 
-    const[zoom, setZoom] = React.useState(false);
-  
-    React.useEffect(() => {
-      if (inView) {
-        document.getElementById("projectHeading").className += " slide";
-        document.getElementById("projectUnderline").className += " slide";
-        setZoom(true)
-
-      }
-    });
+  React.useEffect(() => {
+    if (inView) {
+      document.getElementById("aboutOpt").className = "";
+      document.getElementById("homeOpt").className = " ";
+      document.getElementById("projectsOpt").className = "active";
+      document.getElementById("contactOpt").className = " ";
+      document.getElementById("projectHeading").className += " slide";
+      document.getElementById("projectUnderline").className += " slide";
+      setZoom(true);
+    } else {
+      document.getElementById("projectsOpt").className = "";
+    }
+  });
   return (
     <div id="projects" className="screen" ref={props.inView} ref={ref}>
-      <p id="projectHeading" className="heading">Projects</p>
+      <p id="projectHeading" className="heading">
+        Projects
+      </p>
       <div id="projectUnderline" className="underLine"></div>
       <div className="projectsContainer">
         <Project
-        zoomIn={zoom}
+          zoomIn={zoom}
           img={AbcTutors}
           parts={
             <ul>
               <li>
-                Find tutors locally based on distance, or remote from all over Australia!
+                Find tutors locally based on distance or remote from all over
+                Australia!
               </li>
-              <li>Add your card details and begin booking tutors!</li>
-              <li>Save tutors to your favorites!</li>
-              <li>Filter tutors by experince and subject!</li>
+              <li>Add your card details and begin booking tutors.</li>
+              <li>Save tutors to your favourites.</li>
+              <li>Filter tutors by experience and subject.</li>
               <li>IOS and Android</li>
             </ul>
           }
@@ -71,54 +79,73 @@ function Projects(props) {
           tech={"React Native / MySQL / PHP"}
         />
         <Project
-         zoomIn={zoom}
+          zoomIn={zoom}
           img={Maps}
+          parts={
+            <ul>
+              <li>
+                Live maps for websites use custom tile server to drive down
+                cost.
+              </li>
+              <li>Automatic path creation for cycle, driving and walking.</li>
+              <li>Elevation profile creation.</li>
+              <li>Day by day maps / elevations.</li>
+              <li>Importing map features.</li>
+              <li>Upload your own GPX files. </li>
+            </ul>
+          }
           text={
             <div>
-              Map editor built for one of Australia's largest travel companies.
-              <ul>
-                <li>
-                  Live maps for websites use custom tile server to drive down
-                  cost!
-                </li>
-                <li>Automatic path creation for cycle, driving and walking!</li>
-                <li>Elevation profile creation!</li>
-                <li>Day by day maps / elevations!</li>
-                <li>importing map features from other maps!</li>
-                <li>upload your own GPX files! </li>
-              </ul>
+              Map editor built for one of Australia's largest travel companies <a href="https://worldexpeditions.com/">World Expeditions Travel Group</a> .
+              <br />
+              <br />
+              <a href="https://sydney.wextg.com/spawnitmapDEMO/?code=GHT&countries=NPL&itinerary=09294B5A-33B9-417B-9F09-49BC21B260B4&day=39">
+                View demo here
+              </a>
             </div>
           }
           heading={"World Expeditions Travel Group Map Editor"}
           tech={"VanillaJS / MySQL / PHP / Mapbox / Googles elevation API"}
         />
         <Project
-         zoomIn={zoom}
+          zoomIn={zoom}
           img={Waiver}
+          parts={
+            <ul>
+              <li>Easy to install on ipads to use in the field.</li>
+              <li>Easy to prefill at home through the browser.</li>
+              <li>
+                Dedicated back end, with the option of updating rezdy bookings
+                directly through the API.
+              </li>
+            </ul>
+          }
           text={
             <div>
-              Progressive web app waiver system built for Blue Mountains
-              Adventure Company
-              <ul>
-                <li>Easy to install on ipads to use in the field!</li>
-                <li>Easy to prefill at home through the browser!</li>
-                <li>Dedicated back end, with the option of updating rezdy bookings directly through the API</li>
-              </ul>
+              Progressive web app waiver system built for <a href="https://bmac.com.au/"> Blue Mountains
+              Adventure Company </a> <br />
+              <br />
+              <a href="https://sydney.wextg.com/bmwDEMO/">View demo here</a>
             </div>
           }
           heading={"BMAC Waivers"}
-          tech={"VanillaJS / MySQL / PHP / Rezdy"}
+          tech={"VanillaJS / JQuery / MySQL / PHP / Rezdy"}
         />
         <Project
-         zoomIn={zoom}
+          zoomIn={zoom}
           img={AlgoView}
+          parts={
+            <ul>
+              <li>An array of sorting algorithims. (Pun intended)</li>
+              <li>Has path finding algorithims too.</li>
+            </ul>
+          }
           text={
             <div>
-              Person project to consolidate my knowledge of data structures and algorithims
-              <ul>
-                <li>An array of sorting algorithims! (Pun intended)</li>
-                <li>Has pathing finding algorithims too!</li>
-              </ul>
+              Personal project to consolidate my knowledge of data structures
+              and algorithims. <br />
+              <br />
+              <a href="https://lsdsoftware.io/algoview/">View here</a>
             </div>
           }
           heading={"Algo View"}
@@ -126,16 +153,20 @@ function Projects(props) {
         />
 
         <Project
-         zoomIn={zoom}
+          zoomIn={zoom}
           img={Fsi}
+          parts={
+            <ul>
+              <li>Upload and delete documents as admin.</li>
+              <li>Update home page as admin.</li>
+              <li>Signup with email address.</li>
+            </ul>
+          }
           text={
             <div>
-              Portal created for the <a href="https://fireandsafety.com.au/">FSI</a>. A place where FSI can share documents and news with distributors.
-              <ul>
-                <li>Upload and delete documents as admin!</li>
-                <li>Update home page as admin!</li>
-                <li>Signup with email address!</li>
-              </ul>
+              Portal created for the{" "}
+              <a href="https://fireandsafety.com.au/">FSI</a>. A place where FSI
+              can share documents and news with distributors.
             </div>
           }
           heading={"FSI Portal"}
@@ -143,20 +174,20 @@ function Projects(props) {
         />
 
         <Project
-         zoomIn={zoom}
+          zoomIn={zoom}
           img={Ifuture}
+          parts={
+            <ul>
+              <li>Install to home screen for easy access.</li>
+              <li>Pick when you want the letter to arrive.</li>
+              <li>Validate email address upon send and then wait!</li>
+            </ul>
+          }
           text={
             <div>
-              Progressive web app for writing letters to your future self
-              <ul>
-                <li>Easy to install on in house ipads to use in the field</li>
-                <li>Easy to prefill at home through the browser</li>
-                <li>Updates rezdy bookings once filled</li>
-                <li>
-                  Can be intergrated with any booking system with that has api
-                  access
-                </li>
-              </ul>
+              Progressive web app for writing letters to your future self.<br />
+              <br />
+              <a href="https://lsdsoftware.io/ifuture/">View here</a>
             </div>
           }
           heading={"Ifuture"}
@@ -164,26 +195,44 @@ function Projects(props) {
         />
 
         <Project
-         zoomIn={zoom}
+          zoomIn={zoom}
           img={Covid}
+          parts={
+            <ul>
+              <li>Switch between confirmed, deaths and recovered.</li>
+              <li>Easy to visualise progression via time slider.</li>
+              <li>Updates daily.</li>
+            </ul>
+          }
           text={
             <div>
-              Progressive web app waiver system built for Blue Mountains
-              Adventure Company
-              <br></br>interesting parts:<br></br>
-              <ul>
-                <li>Easy to install on in house ipads to use in the field</li>
-                <li>Easy to prefill at home through the browser</li>
-                <li>Updates rezdy bookings once filled</li>
-                <li>
-                  Can be intergrated with any booking system with that has api
-                  access
-                </li>
-              </ul>
+              Geographical representation of the data set found at: <a href="https://github.com/CSSEGISandData/COVID-19">https://github.com/CSSEGISandData/COVID-19</a><br />
+              <br />
+              <a href="https://lsdsoftware.io/covid/">View here</a>
             </div>
           }
-          heading={"BMAC Waivers"}
-          tech={"VanillaJS / MySQL / PHP"}
+          heading={"Covid Map"}
+          tech={"ReactJS / Mapbox / PHP"}
+        />
+         <Project
+          zoomIn={zoom}
+          img={Reports}
+          parts={
+            <ul>
+              <li>Updates daily.</li>
+              <li>Filter data on all dimensions via the click of a button.</li>
+              <li>Graphs generated instantly.</li>
+              <li>Toggle between different graph styles.</li>
+            </ul>
+          }
+          text={
+            <div>
+              Reporting system built for <a href="https://worldexpeditions.com/">World Expeditions Travel Group</a> to replace traditional spread sheet reporting.
+              <br />
+            </div>
+          }
+          heading={"WETG Reports"}
+          tech={"VanillaJS / JQuery / Plotly / PHP / MySQL"}
         />
       </div>
     </div>

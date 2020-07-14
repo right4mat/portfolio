@@ -15,42 +15,48 @@ const Skill = (props) => {
 };
 
 function About(props) {
-  const [ref, inView, entry] = useInView({
+  const [about, inView, entry] = useInView({
     /* Optional options */
-    threshold: 0.35,
+    threshold: 0.15,
   });
 
   React.useEffect(() => {
     
     if (inView) {
+      document.getElementById("aboutOpt").className = 'active';
+      document.getElementById("homeOpt").className = ' ';
+      document.getElementById("projectsOpt").className = ' ';
+      document.getElementById("contactOpt").className = ' ';
       document.getElementById("skills").className += " slide";
       document.querySelector(".about").className += " slide";
       document.getElementById("aboutHeading").className += " slide";
       document.getElementById("aboutUnderline").className += " slide";
+    }else{
+      document.getElementById("aboutOpt").className = ''
     }
   });
 
   return (
-    <div id="about" className="screen" ref={props.inView} ref={ref}>
+    <div id="about" className="screen" ref={props.inView} ref={about}>
       <p id="aboutHeading" className="heading">About</p>
       <div id="aboutUnderline" className="underLine"></div>
       <div id="skills" className="skills">
         <Skill
           text={
-            "Fast load times and lag free interaction, my highest priority."
+            "Fast load times and lag free!"
           }
           icon={<i className="fas fa-rocket largeIcon"></i>}
         />
         <Skill
-          text={"Strong preference for easy to use, intuitive UX/UI."}
+          text={"Devices, big or small."}
           icon={<i className="material-icons largeIcon">&#xe337;</i>}
         />
         <Skill
-          text={"My layouts will work on any device, big or small."}
+          text={"Easy to use, intuitive UX/UI."}
           icon={<i className="fas fa-star largeIcon"></i>}
         />
         <Skill
-          text={"My layouts will work on any device, big or small."}
+          text={"Thinking outside the box."}
           icon={<i class="far fa-lightbulb largeIcon"></i>}
         />
       </div>
@@ -68,7 +74,7 @@ function About(props) {
           </p>
           <p className="poweredText">
             Powered by VSCode, ReactJS, React Native, PHP, MySQL, VanillaJS,
-            JQuery and... Coffee
+            JQuery, AWS and... Coffee
           </p>
         </div>
       </div>

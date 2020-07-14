@@ -2,12 +2,28 @@ import React from "react";
 import "./SharedStyle.css";
 import "./LandingPageStyle.css";
 import mapboxgl from "mapbox-gl";
+import { useInView } from "react-intersection-observer";
 
 function LandingPage(props) {
+
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0.15,
+  });
   mapboxgl.accessToken =
     "pk.eyJ1IjoibHNkOTIiLCJhIjoiY2s4ZmppbTJ3MDR4dDNsb3o2bjFqd2QxbSJ9.yJtrEsVvvfFiPHA4ytn2Og";
 
   let map;
+
+  React.useEffect(() => {
+    if (inView){
+      document.getElementById("aboutOpt").className = '';
+      document.getElementById("homeOpt").className = 'active';
+      document.getElementById("projectsOpt").className = '';
+      document.getElementById("contactOpt").className = '';
+    }else
+      document.getElementById("homeOpt").className = ''
+    })
 
   React.useEffect(() => {
     map = new mapboxgl.Map({
@@ -27,7 +43,7 @@ function LandingPage(props) {
   }, []);
 
   return (
-    <div id="home" className="screen" ref={props.inView}>
+    <div id="home" className="screen" ref={ref}>
       <div className="screenCover">
         <div className="text">
             Hello, I'm <span className="highlight">Luke Daniels</span>.

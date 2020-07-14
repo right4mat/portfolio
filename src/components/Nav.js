@@ -7,7 +7,7 @@ smoothscroll.polyfill();
 
 function Nav(props) {
 
-  const [selected, setSelected] = React.useState("home");
+
 
 
   const handleScroll = () => {
@@ -28,14 +28,7 @@ function Nav(props) {
     window.attachEvent("onscroll", handleScroll);
   }
 
-  React.useEffect(()=>{
 
-      if(props.home)setSelected('home');
-      if(props.about)setSelected('about');
-      if(props.projects)setSelected('projects');
-      if(props.contact)setSelected('contact');
-
-  })
 
 
 
@@ -53,36 +46,36 @@ function Nav(props) {
     <div id="navigation">
       <div className="navOptions">
         <div
-          className={selected === "home" ? "active" : ""}
+        id="homeOpt"
+          
           onClick={() => {
-            setSelected("home");
             scrollHome();
           }}
         >
           Home
         </div>
         <div
-          className={selected === "about" ? "active" : ""}
+        id="aboutOpt"
+          
           onClick={() => {
-            setSelected("about");
             scrollAbout();
           }}
         >
           About
         </div>
         <div
-          className={selected === "projects" ? "active" : ""}
+        id="projectsOpt"
+          
           onClick={() => {
-            setSelected("projects");
             scrollProjects();
           }}
         >
           Projects
         </div>
         <div
-          className={selected === "contact" ? "active" : ""}
+        id="contactOpt"
+          
           onClick={() => {
-            setSelected("contact");
             scrollContact();
           }}
         >
