@@ -93,7 +93,7 @@ function Projects(props) {
           }
           text={
             <div>
-              Still a work in progress about. However, about 95% complete!
+              Still a work in progress. However, about 95% of the functionality is complete!
               EvntSafe is the link between your COVIDSAFE plan and all the
               operational onsite requirements that come with it.
               <br />
