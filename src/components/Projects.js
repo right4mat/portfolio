@@ -9,6 +9,7 @@ import Fsi from "../assets/fsi.png";
 import Covid from "../assets/covid.png";
 import Ifuture from "../assets/ifuture.png";
 import Reports from "../assets/REPORTS.png";
+import Event from "../assets/eventsafe.png";
 import { useInView } from "react-intersection-observer";
 
 const Project = (props) => {
@@ -26,10 +27,7 @@ const Project = (props) => {
 };
 
 function Projects(props) {
-  const [ref, inView, entry] = useInView({
-    /* Optional options */
-    threshold: 0.15,
-  });
+  const [ref, inView, entry] = useInView({});
 
   const [zoom, setZoom] = React.useState(false);
 
@@ -80,6 +78,36 @@ function Projects(props) {
         />
         <Project
           zoomIn={zoom}
+          img={Event}
+          parts={
+            <ul>
+              <li>Build your own custom form.</li>
+              <li>Print to pdf QR code with instructions.</li>
+              <li>Add your own custom logo to the QR code</li>
+              <li>Patron phoneless? You can manage patrons manually too.</li>
+              <li>
+                Manage all your events, venues, jobsites etc from the one
+                platform.
+              </li>
+            </ul>
+          }
+          text={
+            <div>
+              Still a work in progress about. However, about 95% complete!
+              EvntSafe is the link between your COVIDSAFE plan and all the
+              operational onsite requirements that come with it.
+              <br />
+              <br />
+              <a href="https://lsdsoftware.io/vnu">
+                View demo here
+              </a>
+            </div>
+          }
+          heading={"EvntSafe"}
+          tech={"ReactJS / MySQL / PHP"}
+        />
+        <Project
+          zoomIn={zoom}
           img={Maps}
           parts={
             <ul>
@@ -96,7 +124,11 @@ function Projects(props) {
           }
           text={
             <div>
-              Map editor built for one of Australia's largest travel companies <a href="https://worldexpeditions.com/">World Expeditions Travel Group</a> .
+              Map editor built for one of Australia's largest travel companies{" "}
+              <a href="https://worldexpeditions.com/">
+                World Expeditions Travel Group
+              </a>{" "}
+              .
               <br />
               <br />
               <a href="https://sydney.wextg.com/spawnitmapDEMO/?code=GHT&countries=NPL&itinerary=09294B5A-33B9-417B-9F09-49BC21B260B4&day=39">
@@ -122,8 +154,12 @@ function Projects(props) {
           }
           text={
             <div>
-              Progressive web app waiver system built for <a href="https://bmac.com.au/"> Blue Mountains
-              Adventure Company </a> <br />
+              Progressive web app waiver system built for{" "}
+              <a href="https://bmac.com.au/">
+                {" "}
+                Blue Mountains Adventure Company{" "}
+              </a>{" "}
+              <br />
               <br />
               <a href="https://sydney.wextg.com/bmwDEMO/">View demo here</a>
             </div>
@@ -185,7 +221,8 @@ function Projects(props) {
           }
           text={
             <div>
-              Progressive web app for writing letters to your future self.<br />
+              Progressive web app for writing letters to your future self.
+              <br />
               <br />
               <a href="https://lsdsoftware.io/ifuture/">View here</a>
             </div>
@@ -206,7 +243,11 @@ function Projects(props) {
           }
           text={
             <div>
-              Geographical representation of the data set found at: <a href="https://github.com/CSSEGISandData/COVID-19">https://github.com/CSSEGISandData/COVID-19</a><br />
+              Geographical representation of the data set found at:{" "}
+              <a href="https://github.com/CSSEGISandData/COVID-19">
+                https://github.com/CSSEGISandData/COVID-19
+              </a>
+              <br />
               <br />
               <a href="https://lsdsoftware.io/covid/">View here</a>
             </div>
@@ -214,7 +255,7 @@ function Projects(props) {
           heading={"Covid Map"}
           tech={"ReactJS / Mapbox / PHP"}
         />
-         <Project
+        <Project
           zoomIn={zoom}
           img={Reports}
           parts={
@@ -227,7 +268,11 @@ function Projects(props) {
           }
           text={
             <div>
-              Reporting system built for <a href="https://worldexpeditions.com/">World Expeditions Travel Group</a> to replace traditional spread sheet reporting.
+              Reporting system built for{" "}
+              <a href="https://worldexpeditions.com/">
+                World Expeditions Travel Group
+              </a>{" "}
+              to replace traditional spread sheet reporting.
               <br />
             </div>
           }
