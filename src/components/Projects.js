@@ -51,6 +51,36 @@ function Projects(props) {
       </p>
       <div id="projectUnderline" className="underLine"></div>
       <div className="projectsContainer">
+      <Project
+          zoomIn={zoom}
+          img={Event}
+          parts={
+            <ul>
+              <li>Build your own custom form.</li>
+              <li>Print to pdf QR code with instructions.</li>
+              <li>Add your own custom logo to the QR code</li>
+              <li>Patron phoneless? You can manage patrons manually too.</li>
+              <li>
+                Manage all your events, venues, jobsites etc from the one
+                platform.
+              </li>
+            </ul>
+          }
+          text={
+            <div>
+              Still a work in progress. However, about 95% of the functionality is complete!
+              TRACQR is the link between your COVIDSAFE plan and all the
+              operational onsite requirements that come with it.
+              <br />
+              <br />
+              <a href="https://trac-qr.com">
+                View demo here
+              </a>
+            </div>
+          }
+          heading={"TRACQR"}
+          tech={"ReactJS / MySQL / PHP"}
+        />
         <Project
           zoomIn={zoom}
           img={AbcTutors}
@@ -74,38 +104,9 @@ function Projects(props) {
             </div>
           }
           heading={"ABC Nanny Services (Tutoring)"}
-          tech={"React Native / MySQL / PHP"}
+          tech={"React Native / MySQL / PHP / Stripe"}
         />
-        <Project
-          zoomIn={zoom}
-          img={Event}
-          parts={
-            <ul>
-              <li>Build your own custom form.</li>
-              <li>Print to pdf QR code with instructions.</li>
-              <li>Add your own custom logo to the QR code</li>
-              <li>Patron phoneless? You can manage patrons manually too.</li>
-              <li>
-                Manage all your events, venues, jobsites etc from the one
-                platform.
-              </li>
-            </ul>
-          }
-          text={
-            <div>
-              Still a work in progress. However, about 95% of the functionality is complete!
-              EvntSafe is the link between your COVIDSAFE plan and all the
-              operational onsite requirements that come with it.
-              <br />
-              <br />
-              <a href="https://lsdsoftware.io/vnu">
-                View demo here
-              </a>
-            </div>
-          }
-          heading={"EvntSafe"}
-          tech={"ReactJS / MySQL / PHP"}
-        />
+        
         <Project
           zoomIn={zoom}
           img={Maps}
