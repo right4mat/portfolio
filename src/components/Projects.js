@@ -51,12 +51,12 @@ function Projects(props) {
       </p>
       <div id="projectUnderline" className="underLine"></div>
       <div className="projectsContainer">
-      <Project
+        <Project
           zoomIn={zoom}
           img={Event}
           parts={
             <ul>
-              <li>Build your own custom form.</li>
+              <li>Build your own custom forms.</li>
               <li>Print to pdf QR code with instructions.</li>
               <li>Add your own custom logo to the QR code</li>
               <li>Patron phoneless? You can manage patrons manually too.</li>
@@ -64,18 +64,24 @@ function Projects(props) {
                 Manage all your events, venues, jobsites etc from the one
                 platform.
               </li>
+              <li>
+                Standard cafe style check-in or send your patrons personalised
+                QR codes to use in conjunction with the TRACQR scanner.
+              </li>
+              <li>
+                Set permissons ontop of personalised QR codes to control access.
+              </li>
             </ul>
           }
           text={
             <div>
-              Still a work in progress. However, about 95% of the functionality is complete!
+              Currently used by the{" "}
+              <a href="https://www.worldsurfleague.com/">Word Surf league!</a>{" "}
               TRACQR is the link between your COVIDSAFE plan and all the
               operational onsite requirements that come with it.
               <br />
               <br />
-              <a href="https://trac-qr.com">
-                View demo here
-              </a>
+              <a href="https://trac-qr.com">View here</a>
             </div>
           }
           heading={"TRACQR"}
@@ -106,7 +112,7 @@ function Projects(props) {
           heading={"ABC Nanny Services (Tutoring)"}
           tech={"React Native / MySQL / PHP / Stripe"}
         />
-        
+
         <Project
           zoomIn={zoom}
           img={Maps}
