@@ -2,6 +2,7 @@ import React from "react";
 import "./SharedStyle.css";
 import "./ProjectsStyle.css";
 import AbcTutors from "../assets/abctutors.png";
+import growingTeams from "../assets/growingteams.png";
 import Maps from "../assets/maps.png";
 import Waiver from "../assets/waiver.png";
 import AlgoView from "../assets/algoview3.png";
@@ -51,6 +52,30 @@ function Projects(props) {
       </p>
       <div id="projectUnderline" className="underLine"></div>
       <div className="projectsContainer">
+      <Project
+          zoomIn={zoom}
+          img={growingTeams}
+          parts={
+            <ul>
+              <li>Company optimization and profitablity</li>
+              <li>HCM interaction</li>
+              <li>Time and attendence rules for ANY situation</li>
+              
+              <li>Manage leave and overtime requests</li>
+              <li>Payslips</li>
+              <li>Push to external payroll systems</li>
+            </ul>
+          }
+          text={
+            <div>
+              Currently the technical lead for a time and attendence start up named Growing Teams. Its still early days but we already have DHL and TOLL onboard our solution!.  
+              <br />
+              <br />
+            </div>
+          }
+          heading={"Growing Teams"}
+          tech={"UI5 / SAP HANA / NodeJS"}
+        />
         <Project
           zoomIn={zoom}
           img={Event}

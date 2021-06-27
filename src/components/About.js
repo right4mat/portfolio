@@ -73,7 +73,7 @@ function About(props) {
             Want to build something together?
           </p>
           <p className="poweredText">
-            Powered by VSCode, ReactJS, React Native, PHP, MySQL, VanillaJS,
+            Powered by VSCode, ReactJS, React Native, PHP, Laravel, NodeJS, ExpressJS, UI5, SAP HANA, XSJS, MySQL, VanillaJS,
             JQuery, AWS and... Coffee
           </p>
         </div>
